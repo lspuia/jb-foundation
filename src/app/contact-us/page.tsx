@@ -63,7 +63,7 @@ export default function ContactUs() {
 
                     <span className="directions">
                       (
-                      <a href="https://www.google.com/maps/dir/23.7133906,92.7194151/jbpaws/@23.7234153,92.7148519,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x374d952d2e792657:0x5b42d4012b7f956d!2m2!1d92.7461187!2d23.7386288">
+                      <a href="https://maps.app.goo.gl/BeQmgmQeZY1aw8Xs9" target="_blank" rel="noopener noreferrer">
                         Get Directions
                       </a>
                       )
@@ -75,7 +75,7 @@ export default function ContactUs() {
             <div className="map">
               <div className="map-wrapper">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14608.981386994441!2d92.7461187!3d23.7386288!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b42d4012b7f956d!2sJB%20PAWS!5e0!3m2!1sen!2sin!4v1599505656085!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.473774859867!2d92.7435373!3d23.7386502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374d95553ba5ab2f%3A0xf4d13e870880a469!2sJB%20Foundation%20(A%20CAUSE%20FOR%20PAWS)!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
                   width="600"
                   height="450"
                   style={{ border: 0 }}
