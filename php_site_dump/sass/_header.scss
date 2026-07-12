@@ -1,0 +1,120 @@
+header.header {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid $red;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+header.header .container {
+  position: relative;
+  @include respond-to(medium) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.home header.header .container {
+  @include respond-to(medium) {
+    justify-content: center;
+  }
+}
+.header__logo {
+  display: inline-block;
+}
+.home .header__logo {
+  display: none;
+}
+.header__logo img {
+  display: block;
+  height: 70px;
+  width: auto;
+  @include respond-to(medium) {
+    height: 90px;
+  }
+}
+.main-menu {
+  margin-top: 0;
+  display: none;
+}
+.menu-open .main-menu {
+  display: inline-block;
+}
+.main-menu,
+.menu-open .main-menu {
+  @include respond-to(medium) {
+    display: flex;
+  }
+}
+.home .main-menu {
+  @include respond-to(medium) {
+    justify-content: center;
+  }
+}
+.main-menu a {
+  display: block;
+  background-color: $xlight-gray;
+  padding: 0.5rem 2rem;
+  @include respond-to(medium) {
+    padding: 0.25rem 0.25rem;
+    background-color: transparent;
+    &:hover {
+      color: $red;
+    }
+  }
+}
+.main-menu li {
+  margin: 4px 0;
+  @include respond-to(medium) {
+    margin-right: 1rem;
+  }
+}
+
+#toggle {
+  display: block;
+  height: 1.25rem;
+  width: 1.5rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  cursor: pointer;
+  @include respond-to(medium) {
+    display: none;
+  }
+}
+#toggle:before,
+#toggle:after,
+#toggle span:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: $red;
+}
+#toggle:before {
+  top: 0;
+}
+#toggle:after {
+  top: 100%;
+  margin-top: -2px;
+}
+#toggle span:after {
+  top: 50%;
+  margin-top: -1px;
+}
+.menu-open #toggle:before,
+.menu-open #toggle:after {
+  top: 50%;
+  margin-top: -1px;
+}
+.menu-open #toggle span:after {
+  display: none;
+}
+.menu-open #toggle:before {
+  transform: rotate(45deg);
+}
+.menu-open #toggle:after {
+  transform: rotate(-45deg);
+}

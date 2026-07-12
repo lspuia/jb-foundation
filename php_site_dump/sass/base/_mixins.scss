@@ -1,0 +1,216 @@
+// media queries mixin
+$BREAKPOINTS: (
+  "xsmall": 480px,
+  "small": 620px,
+  "medium": 1000px,
+  "large": 1200px,
+  "xlarge": 1333px,
+);
+
+@function breakpoint($name) {
+  @if not map-has-key($BREAKPOINTS, $name) {
+    @error 'Unknown constant `#{$name}`.';
+  }
+  @return map-get($BREAKPOINTS, $name);
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xsmall {
+    @media (min-width: breakpoint(xsmall)) {
+      @content;
+    }
+  } @else if $breakpoint == small {
+    @media (min-width: breakpoint(small)) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (min-width: breakpoint(medium)) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (min-width: breakpoint(large)) {
+      @content;
+    }
+  } @else if $breakpoint == xlarge {
+    @media (min-width: breakpoint(xlarge)) {
+      @content;
+    }
+  }
+}
+
+@mixin biz-grid-column-width {
+  &-1 {
+    width: percentage(1/12);
+  }
+
+  &-2 {
+    width: percentage(2/12);
+  }
+
+  &-3 {
+    width: percentage(3/12);
+  }
+
+  &-4 {
+    width: percentage(4/12);
+  }
+
+  &-5 {
+    width: percentage(5/12);
+  }
+
+  &-6 {
+    width: percentage(6/12);
+  }
+
+  &-7 {
+    width: percentage(7/12);
+  }
+
+  &-8 {
+    width: percentage(8/12);
+  }
+
+  &-9 {
+    width: percentage(9/12);
+  }
+
+  &-10 {
+    width: percentage(10/12);
+  }
+
+  &-11 {
+    width: percentage(11/12);
+  }
+
+  &-12 {
+    width: percentage(12/12);
+  }
+}
+
+.xs {
+  @include biz-grid-column-width;
+}
+.sm {
+  @include respond-to(small) {
+    @include biz-grid-column-width;
+  }
+}
+
+.md {
+  @include respond-to(medium) {
+    @include biz-grid-column-width;
+  }
+}
+
+.lg {
+  @include respond-to(large) {
+    @include biz-grid-column-width;
+  }
+}
+
+.xl {
+  @include respond-to(xlarge) {
+    @include biz-grid-column-width;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+@mixin transition($t...) {
+  -webkit-transition: $t;
+  -moz-transition: $t;
+  -ms-transition: $t;
+  -o-transition: $t;
+  transition: $t;
+}
+
+@mixin transition-all {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@mixin white-stripes {
+  /*
+  background-image: repeating-linear-gradient(
+    -65deg,
+    transparent 0 2px,
+    rgba(#fff, 0.1) 2px 3px
+  );
+  */
+  background-image: url("./../assets/white-stripe.png");
+}
+
+@mixin green-stripes() {
+  /*
+  background-image: repeating-linear-gradient(
+    -65deg,
+    transparent 0 2px,
+    rgba($green, 0.7) 2px 3px
+  );
+  */
+  background-image: url("./../assets/green-stripe.png");
+}
+
+@mixin gradient-primary($angle) {
+  background-image: linear-gradient($angle, $green 0, $blue 100%);
+}
+
+@mixin gradient-overlay($angle, $stop) {
+  background-image: linear-gradient(
+    $angle,
+    rgba(#000, 0.8) 0,
+    rgba(#000, 0.5) $stop,
+    transparent 100%
+  );
+}
+
+@mixin polka-dot($color) {
+  background-image: radial-gradient($color 40%, transparent 41%);
+  background-size: 50px 50px;
+  background-position: 0 0, 40px 40px;
+}
+
+@mixin header-font {
+  font-family: "Eczar", serif;
+}
+
+@mixin text-shadow {
+  text-shadow: 0 0 1px rgba(#000, 0.5);
+}
+
+@mixin btn {
+  display: inline-block;
+  height: 2.6em;
+  line-height: 2.6em;
+  padding: 0.1em;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgba(darken($blue, 30%), 0.1);
+  border-radius: (2.6em)/2;
+  span {
+    display: block;
+    @include gradient-primary(0deg);
+    @include text-shadow;
+    height: 2.6em - ((0.1em) * 2);
+    line-height: 2.6em - ((0.1em) * 2);
+    border-radius: (2.6em - ((0.1em) * 2))/2;
+    padding: 0 (2.6em - ((0.1em) * 2))/1.5;
+    font-weight: 700;
+  }
+  &:hover span {
+    @include gradient-primary(30deg);
+  }
+}
