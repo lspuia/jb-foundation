@@ -640,10 +640,13 @@ section.jb p {
       margin-top: 0;
       flex-grow: 1; } }
 
-@media (min-width: 1000px) {
-  .contact .flex {
-    display: flex;
-    flex-wrap: nowrap; } }
+.contact .flex {
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 1000px) {
+    .contact .flex {
+      flex-direction: row;
+      flex-wrap: nowrap; } }
 
 .contact .text {
   white-space: nowrap; }
