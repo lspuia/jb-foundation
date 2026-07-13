@@ -1,4 +1,27 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Animal Shelter Project | JB Foundation',
+  description: 'JB Foundation is building an animal shelter in Aizawl, Mizoram to rescue and rehabilitate abused and abandoned animals. Help us complete this mission.',
+  keywords: 'animal shelter, JB Foundation, Mizoram, Aizawl, pet rescue, animal welfare, donate',
+  openGraph: {
+    title: 'Animal Shelter Project | JB Foundation',
+    description: 'Help JB Foundation build an animal shelter in Aizawl, Mizoram for rescuing abused and abandoned animals.',
+    url: 'https://www.jbfoundation.co.in/animal-shelter',
+    siteName: 'JB Foundation',
+    images: [
+      {
+        url: 'https://www.jbfoundation.co.in/jb-foundation-animal-shelter.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'JB Foundation Animal Shelter Construction',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+};
 
 export default function AnimalShelter() {
   return (

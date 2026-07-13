@@ -1,4 +1,27 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'JB Foundation | A Cause for Paws - Animal Rescue Mizoram',
+  description: 'JB Foundation rescues, rehabilitates, and rehomes abused and abandoned animals in Aizawl, Mizoram. Founded in memory of Jerry Boy (JB). Join our mission.',
+  keywords: 'JB Foundation, animal rescue Mizoram, pet rescue Aizawl, Jerry Boy, animal welfare, pet adoption, animal shelter Mizoram',
+  openGraph: {
+    title: 'JB Foundation | A Cause for Paws - Animal Rescue Mizoram',
+    description: 'Rescuing, rehabilitating, and rehoming abused animals in Aizawl, Mizoram since 2016.',
+    url: 'https://www.jbfoundation.co.in',
+    siteName: 'JB Foundation',
+    images: [
+      {
+        url: 'https://www.jbfoundation.co.in/jb-foundation.png',
+        width: 1200,
+        height: 630,
+        alt: 'JB Foundation - A Cause for Paws',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+};
 
 export default function Home() {
   return (

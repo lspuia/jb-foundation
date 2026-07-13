@@ -1,3 +1,19 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us | JB Foundation',
+  description: 'Get in touch with JB Foundation in Aizawl, Mizoram. Phone: +91 8259 989 871, Email: jbfoundation20@gmail.com. Visit us at Zemabawk Kawn Veng.',
+  keywords: 'contact JB Foundation, Aizawl address, Mizoram animal rescue contact, pet rescue phone number',
+  openGraph: {
+    title: 'Contact Us | JB Foundation',
+    description: 'Reach out to JB Foundation for animal rescue and welfare in Aizawl, Mizoram.',
+    url: 'https://www.jbfoundation.co.in/contact-us',
+    siteName: 'JB Foundation',
+    locale: 'en_IN',
+    type: 'website',
+  },
+};
+
 export default function ContactUs() {
   return (
     <main className="contact-us">

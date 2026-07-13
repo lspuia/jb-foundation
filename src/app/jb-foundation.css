@@ -716,6 +716,15 @@ section.thanks .container:after {
     .stories ul li {
       width: 33.3333333333%; } }
 
+.animal-shelter-page figure {
+  margin-left: 0;
+  margin-right: 0; }
+
+.animal-shelter-page figure img {
+  width: 100%;
+  height: auto;
+  display: block; }
+
 .animal-shelter-page .donate-now {
   text-align: center;
   background-color: #f0f0f0;
