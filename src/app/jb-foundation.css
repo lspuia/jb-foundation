@@ -567,7 +567,9 @@ section.jb p {
   overflow: hidden; }
 
 .dinner-time img {
-  display: block; }
+  display: block;
+  width: 100%;
+  height: auto; }
 
 .dinner-time figcaption {
   font-family: "Eczar", serif;
